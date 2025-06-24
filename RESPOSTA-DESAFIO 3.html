@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Verificação de número</title>
+
+<style>
+body {
+font-family: MS GOTHIC, Calibri;
+text-align: center;
+margin-top: 50px;
+background-color: #00ffea;
+}
+input {
+padding: 10px;
+font-size: 16px;
+}
+button {
+padding: 10px 20px;
+font-size: 18px;
+margin-left: 15px;
+cursor: pointer;
+}
+#resultado {
+margin-top: 20px;
+font-weight: Century;
+color: #000000;
+}
+</style>
+</head>
+<body>
+<h1>Verificação de número</h1>
+<p>Digite um número:</p>
+<input type="number" id="numero" placeholder="Ex: -1">
+<button onclick="verificarNumero()">Verificar</button>
+<p id="resultado"></p>
+
+<script>
+function verificarNumero() {
+    const valor = parseFloat(document.getElementById("numero").value);
+    let mensagem = "";
+
+    if (isNaN(valor)) {
+        mensagem = "Valor inválido! Por favor, digite um número válido.";
+    } else if (valor > 0) {
+        mensagem = "O número é positivo.";
+    } else if (valor < 0) {
+        mensagem = "O número é negativo.";
+    } else {
+        mensagem = "O número é zero.";
+    }
+
+    document.getElementById("resultado").innerText = mensagem;
+}
+</script>
+</body>
+</html>
